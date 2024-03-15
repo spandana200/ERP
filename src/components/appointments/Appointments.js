@@ -6,7 +6,7 @@ import SideBar from "../dashboard/SideBar.js";
 function Appointments() {
   const [appointments, setAppointments] = useState(appointmentsMockData);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 5;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = appointments.slice(indexOfFirstItem, indexOfLastItem);
@@ -55,7 +55,7 @@ function Appointments() {
         <h2 style={{ textAlign: "center", marginLeft: "250px" }}>
           Appointments
         </h2>
-        <table style={{ margin: 20, height: "50%" }}>
+        <table style={{ margin: 20, height: "50%",marginLeft: "100px" }}>
           <thead className="table-header">
             <tr
               style={{
