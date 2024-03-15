@@ -33,11 +33,25 @@ function Appointments() {
     setAppointments(updatedAppointment);
   };
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
       <div style={{ width: "25%" }}>
         <SideBar />
       </div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+        }}
+      >
         <h2 style={{ textAlign: "center", marginLeft: "250px" }}>
           Appointments
         </h2>

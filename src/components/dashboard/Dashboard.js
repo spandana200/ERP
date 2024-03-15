@@ -1,15 +1,14 @@
 import GroupsOutlinedIcon from "@material-ui/icons/GroupOutlined";
 import React from "react";
+import appointments from "../../mockData/AppointmentsMockData";
 import clientsMockData from "../../mockData/ClientsMockData";
 import ordersMockData from "../../mockData/OrdersMockData";
 import productsMockData from "../../mockData/ProductsMockData";
-
-import appointments from "../../mockData/AppointmentsMockData";
-import ItemsByCategory from "../dashboard/ItemsByCategory";
 import OrdersByMonthGraph from "../dashboard/OrdersByMonthGraph";
 import OrdersTodayGraph from "../dashboard/OrdersTodayGraph";
 import ProductsGraph from "../dashboard/ProductsGraph";
 import SideBar from "../dashboard/SideBar";
+import TodayOrderedProducts from "../dashboard/TodayOrderedProducts";
 function Dashboard() {
   const orders = ordersMockData;
   const products = productsMockData;
@@ -49,7 +48,9 @@ function Dashboard() {
     return todayAppointments.length;
   };
   return (
-    <div style={{ margin: 0, height: "100vh" }}>
+    <div
+      style={{ margin: 0, height: "100vh", width: "100%", overflow: "hidden" }}
+    >
       <h2
         style={{
           position: "relative",
@@ -203,11 +204,11 @@ function Dashboard() {
           >
             {/* pie chart for products by category for todays order*/}
             <div className="pie-chart">
-              <ItemsByCategory products={products} orders={orders} />
+              <TodayOrderedProducts products={products} orders={orders} />
             </div>
             {/* doughnut graph for products based on category*/}
             <div className="doughnut-graph">
-              <h4 style={{ textAlign: "center" }}>
+              <h4 style={{ textAlign: "center", color: "#4169e1" }}>
                 Products Based on Category
               </h4>
 
