@@ -17,7 +17,7 @@ const Products = () => {
   const [showAddProductPopup, setShowAddProductPopup] = useState(false);
   const [showEditProductPopup, setShowEditProductPopup] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
@@ -104,7 +104,7 @@ const Products = () => {
       <div style={{ width: "25%" }}>
         <SideBar />
       </div>
-      <div className="content" style={{ marginLeft: "100px" }}>
+      <div className="content" style={{ marginLeft: "100px", width: "auto" }}>
         <h2 className="heading">Products</h2>
         <div className="addButtonContainer">
           <button onClick={handleAddIcon} className="addButton">

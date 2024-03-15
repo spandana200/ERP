@@ -6,7 +6,7 @@ import SideBar from "../dashboard/SideBar";
 function Clients() {
   const [clients, setClients] = useState(clientsMockData);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 5;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = clients.slice(indexOfFirstItem, indexOfLastItem);
@@ -21,7 +21,15 @@ function Clients() {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
       <div style={{ width: "25%" }}>
         <SideBar />
       </div>
@@ -31,6 +39,7 @@ function Clients() {
           display: "flex",
           flexDirection: "column",
           marginLeft: "100px",
+          width: "100%",
         }}
       >
         <h2 style={{ textAlign: "center", marginLeft: "150px" }}>Clients</h2>

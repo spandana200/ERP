@@ -1,15 +1,17 @@
+import DeleteIcon from "@material-ui/icons/Delete";
+import ViewIcon from "@material-ui/icons/Visibility";
 import React, { useState } from "react";
 import ordersMockData from "../../mockData/OrdersMockData.js";
 import "../../styles/Orders.css";
+import "../../styles/Table.css";
 import SideBar from "../dashboard/SideBar.js";
-import OrdersTable from "./OrdersTable.js";
 
 const Orders = () => {
   const [orders, setOrders] = useState(ordersMockData);
   const [showOrderDetails, setShowOrderDetails] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = orders.slice(indexOfFirstItem, indexOfLastItem);
@@ -25,6 +27,17 @@ const Orders = () => {
   const viewOrder = (orderId) => {
     const orderDetails = orders.find((order) => order.id === orderId);
     setShowOrderDetails(orderDetails);
+  };
+
+  //to update Order Status
+  const updateOrderStatus = (orderId, newStatus) => {
+    const updatedOrders = orders.map((order) => {
+      if (order.id === orderId) {
+        return { ...order, status: newStatus };
+      }
+      return order;
+    });
+    setOrders(updatedOrders);
   };
 
   //to change page
@@ -44,11 +57,56 @@ const Orders = () => {
           </h2>
         </div>
         <div style={{ width: "100%", tableLayout: "auto" }}>
-          <OrdersTable
-            orders={currentItems}
-            viewOrder={viewOrder}
-            deleteOrder={deleteOrder}
-          />
+          <table>
+            <thead className="table-header">
+              <tr
+                style={{
+                  backgroundColor: "#4169e1",
+                }}
+              >
+                <th className="table-header">Order Id</th>
+                <th className="table-header">Customer Name</th>
+                <th className="table-header">Order Date</th>
+                <th className="table-header">Status</th>
+                <th className="table-header">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="table-body" style={{ color: "black" }}>
+              {currentItems.map((order) => (
+                <tr key={order.id}>
+                  <td className="table-body">{order.id}</td>
+                  <td className="table-body">{order.customerName}</td>
+                  <td className="table-body">{order.orderDate}</td>
+                  <td className="table-body">
+                    {" "}
+                    <select
+                      style={{ color: "black" }}
+                      value={order.status}
+                      onChange={(e) =>
+                        updateOrderStatus(order.id, e.target.value)
+                      }
+                    >
+                      <option value="Pending">Pending</option>
+                      <option value="Shipped">Shipped</option>
+                      <option value="Delivered">Delivered</option>
+                      <option value="Cancelled">Cancelled</option>
+                    </select>
+                  </td>
+
+                  <td className="actions-column">
+                    <ViewIcon
+                      onClick={() => viewOrder(order.id)}
+                      style={{ color: "#4169e1" }}
+                    />
+                    <DeleteIcon
+                      onClick={() => deleteOrder(order.id)}
+                      style={{ color: "#4169e1" }}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div className="paginationButtonsContainer">
           <button

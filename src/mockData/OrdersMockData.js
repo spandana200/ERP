@@ -179,9 +179,9 @@ const ordersMockData = [
   {
     id: 15,
     customerName: "Client 3",
-    orderDate: "2024-04-10",
+    orderDate: "2024-03-15",
     status: "Shipped",
-    expectedDeliveryDate: "2024-04-14",
+    expectedDeliveryDate: "2024-03-19",
     items: [{ name: "Smartphone", price: 699, quantity: 1 }],
     totalAmount: 699,
     shippingAddress: "789 Oak St",
