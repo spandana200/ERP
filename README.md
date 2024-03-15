@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# ERP - ReactJS Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
 
-## Available Scripts
+The goal of this project is to create a simplified interface for an ERP (Enterprise Resource Planning) system, designed to manage basic business operations efficiently. The system will consist of the following pages:
+1. Dashboard - Provides an overview of the system's features.
+2. Products Management - Allows for the management of product listings.
+3. Orders Management - Facilitates viewing and handling orders.
+4. Clients - Shows the client listing
+5. Appointments - Shows the appointment listing
+6. Orders Calendar View - A calendar interface displaying orders based on their expected delivery dates.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+### Install Node JS
+Refer to https://nodejs.org/en/ to install nodejs
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install create-react-app
+Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install -g create-react-app
+```
 
-### `npm test`
+## Cloning and Running the Application in local
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the project into local
 
-### `npm run build`
+Install all the npm packages. Go into the project folder and type the following command to install all npm packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to run the application Type the following command
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+The Application Runs on **localhost:3000**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Application design
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Components
+All components includes navigation links for quick access to different pages within the application  and uses Mock Data present in mockData folder for implementaion
+1. **Dashboard** Component :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-This React component displays a summary of various data points in Graphs 
+  - Today's Orders based on Status
+  - Today's Appointments
+  - Products based on Today's Orders by Category(uses dropdown to select category)
+  - Orders by Month
+  - Products based on Category in Chart Form
+- Shows the Info of Total Clients and Top Selling Products
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2.**Products** Component:
+- This component lists all  the products 
+- includes add, delete, edit operations
+- includes pagination
+- Mock data is used to list the products
 
-## Learn More
+3.**Orders** Component:
+- This component lists all the orders
+- includes operations -shows the entire order details on view, deletes, update Order status  by using drop-down of status 
+- includes pagination
+  
+4.**Calendar View** Component:
+  -Includes a calendar view that displays orders on their expected delivery dates.
+  -Provide the ability to click on a date to view all orders due for delivery that day.
+  
+5.**Clients** Component: Lists the clients
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6.**Appointments** Component: Lists the Appointments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Screenshots
