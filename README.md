@@ -74,7 +74,7 @@ All components includes navigation links for quick access to different pages wit
 6.**Appointments** Component: Lists the Appointments
 
 
-#### Screenshots
+## Screenshots
 https://drive.google.com/drive/folders/15ikFnA1LGvAlVelzFzdiAE_HmfdhgQpD?usp=sharing
 
 The above link includes all the screenshots related to the application
