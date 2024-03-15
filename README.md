@@ -15,12 +15,6 @@ The goal of this project is to create a simplified interface for an ERP (Enterpr
 ### Install Node JS
 Refer to https://nodejs.org/en/ to install nodejs
 
-### Install create-react-app
-Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
-
-```bash
-npm install -g create-react-app
-```
 
 ## Cloning and Running the Application in local
 
@@ -49,7 +43,7 @@ All components includes navigation links for quick access to different pages wit
 -This React component displays a summary of various data points in Graphs 
   - Today's Orders based on Status
   - Today's Appointments
-  - Products based on Today's Orders by Category(uses dropdown to select category)
+  - Products based on Today's Orders 
   - Orders by Month
   - Products based on Category in Chart Form
 - Shows the Info of Total Clients and Top Selling Products
