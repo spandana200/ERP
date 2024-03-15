@@ -18,7 +18,7 @@ Refer to https://nodejs.org/en/ to install nodejs
 
 ## Cloning and Running the Application in local
 
-Clone the project into local
+Clone the project into local and checkout to branch:main
 
 Install all the npm packages. Go into the project folder and type the following command to install all npm packages
 
