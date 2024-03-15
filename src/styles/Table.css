@@ -1,0 +1,34 @@
+.table-container {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #4169e1;
+  table-layout: auto;
+}
+
+.table-header {
+  background-color: #4169e1;
+  color: white;
+}
+
+.table-header th {
+  text-align: left;
+  padding: 16px;
+}
+
+.table-body {
+  color: black;
+}
+.table-body tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.table-body td {
+  text-align: left;
+  padding: 16px;
+  width: auto;
+}
+
+.actions-column {
+  text-align: left;
+  padding: 16px;
+}

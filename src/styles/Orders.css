@@ -1,0 +1,98 @@
+/* Orders.css */
+
+.ordersContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  width: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: #4169e1;
+  margin-left: 450px;
+  position: relative;
+}
+
+.paginationButtonsContainer {
+  display: flex;
+  align-items: right;
+  justify-content: end;
+  position: relative;
+  top: 10px;
+}
+
+.paginationButton {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+  background-color: #4169e1;
+  margin: 0 5px;
+}
+
+.paginationButton.active {
+  border: 3px solid white;
+}
+
+.paginationButton.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.popupContent {
+  background-color: white;
+  padding: 80px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: auto;
+  height: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .ordersContainer {
+    flex-direction: column;
+  }
+
+  .heading {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .paginationButtonsContainer {
+    justify-content: center;
+  }
+}
