@@ -146,7 +146,7 @@ function Dashboard() {
             </div>
             {/* top five selling products*/}
             <div
-              className="top-selling-products"
+              className="top-selling-product"
               style={{
                 position: "relative",
                 width: "300px",
